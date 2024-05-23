@@ -1,1 +1,3 @@
 tmux/plugins
+kitty/example.conf
+nvim/lua/plugins/example.lua
