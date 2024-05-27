@@ -54,4 +54,17 @@ return {
       })
     end,
   },
+
+  -- git wrapper
+  {
+    "tpope/vim-fugitive",
+    cmd = "Git",
+    keys = {
+      { "<leader>gs", "<cmd>Git<cr>", desc = "Git Status" },
+      { "<leader>ga", "<cmd>Git add %<cr>", desc = "Git Add" },
+      { "<leader>gC", "<cmd>Git commit<cr>", desc = "Git Commit" },
+      { "<leader>gp", "<cmd>Git push<cr>", desc = "Git Push" },
+      { "<leader>gm", "<cmd>Git commit --amend --no-edit<cr>", desc = "Git Amend" },
+    },
+  },
 }
