@@ -1,3 +1,4 @@
+export PATH=$PATH:$HOME/bin
 source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 #android emulator
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -10,6 +11,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 alias cdc="cd ~/.config/"
 alias cdl="cd ~/.local/"
 alias k="cd ~/.config/kitty/"
+alias v="cd ~/.config/wvim/"
+
+alias tele="cd ~/.local/share/wvim/nvim/lazy/telescope.nvim/"
 
 #project files
 alias eng="cd ~/engineering"
@@ -23,6 +27,7 @@ alias dot="cd ~/engineering/dotfiles/"
 #programs
 alias tm="tmux"
 alias nv="nvim"
+alias wv="wvim"
 alias ngh="ngrok http 3000"
 alias eml="firebase emulators:start"
 
@@ -36,3 +41,6 @@ alias expoc="npx expo start -c"
 alias c="clear"
 alias q="exit"
 alias s="source ~/.zshrc"
+
+#shell integrations
+source <(fzf --zsh)
