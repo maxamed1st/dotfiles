@@ -1,2 +1,4 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
+require("walaalka.set")
+require("walaalka.mappings")
+require("walaalka.lazy-init")
+vim.cmd.colorscheme("tokyonight")
