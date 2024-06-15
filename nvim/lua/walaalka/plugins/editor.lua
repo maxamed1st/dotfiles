@@ -1,5 +1,64 @@
 return {
+  -- colorscheme
 	{
+		"folke/tokyonight.nvim",
+		lazy = true,
+		opts = { style = "moon" },
+	},
+
+  -- statusline
+  {
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			local function show_macro_recording()
+				local recording_register = vim.fn.reg_recording()
+				if recording_register == "" then
+					return ""
+				else
+					return "Recording @" .. recording_register
+				end
+			end
+			require("lualine").setup({
+				options = {
+					theme = "tokyonight",
+				},
+				sections = {
+					lualine_c = {
+						"filename",
+						{
+							"macro-recording",
+							fmt = show_macro_recording,
+						},
+					},
+				},
+			})
+		end,
+	},
+
+  -- file explorer
+  {
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		},
+		keys = {
+			{
+				"<leader>e",
+				function()
+					require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+				end,
+				desc = "Explorer",
+			},
+		},
+	},
+
+  -- notification
+  {
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		opts = {
