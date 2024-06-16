@@ -14,6 +14,21 @@ return {
         update_in_insert = false,
       }
       vim.diagnostic.config(diagnostic_config)
+
+      -- Function to show diagnostics in a floating window
+      function Show_line_diagnostics()
+        local opts = {
+          focusable = false,
+          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+          source = 'always',
+          prefix = ' ',
+        }
+
+        vim.diagnostic.open_float(nil, opts)
+      end
+
+      -- Map the function to a key, e.g., <leader>d
+      vim.api.nvim_set_keymap('n', '<leader>cd', '<cmd>lua Show_line_diagnostics()<CR>', { noremap = true, silent = true })
     end,
   },
 

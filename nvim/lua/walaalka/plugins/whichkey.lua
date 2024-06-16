@@ -28,7 +28,6 @@ return {
         c = {
           name = "Code",
           m = { "<cmd>Mason<cr>", "Mason" },
-          d = { builtin.diagnostics, "Diagnostics" },
           f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
         },
         w = {
