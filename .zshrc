@@ -1,4 +1,3 @@
-source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 #android emulator
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -24,6 +23,7 @@ alias dot="cd ~/engineering/dotfiles/"
 #programs
 alias nv="nvim"
 alias ngh="ngrok http 3000"
+alias gs="git status"
 
 #scripts
 alias nrs="npm run start"
@@ -37,4 +37,5 @@ alias q="exit"
 alias s="source ~/.zshrc"
 
 #shell integrations
+source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source <(fzf --zsh)
