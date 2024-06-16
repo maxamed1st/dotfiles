@@ -14,10 +14,12 @@ return {
     config = function()
       local wk = require("which-key")
       local builtin = require("telescope.builtin")
+      local utils = require("walaalka.utils")
       wk.register({
         f = {
-          name = "Files",
+          name = "Files/Buffers",
           b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+          d = { utils.delete_buffer, "delete buffer"},
           n = { "<cmd>enew<cr>", "New File" },
           r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
         },
