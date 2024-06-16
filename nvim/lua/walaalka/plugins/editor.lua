@@ -107,6 +107,10 @@ return {
         changedelete = { text = "▎" },
         untracked = { text = "▎" },
       },
+      on_attach = function(buffer)
+        local gitsigns = package.loaded.gitsigns
+        vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, { buffer = buffer, desc = "Gitsigns diff this"} )
+      end,
     },
   },
 }
