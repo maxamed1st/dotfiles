@@ -37,7 +37,7 @@ return {
       end
 
       -- Map the function to a key, e.g., <leader>d
-      vim.api.nvim_set_keymap('n', '<leader>cd', '<cmd>lua Show_line_diagnostics()<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>cd', '<cmd>lua Show_line_diagnostics()<CR>', { noremap = true, silent = true, desc = "Show diagnostics" })
       -- toggle diagnostic
         vim.keymap.set('n', '<leader>ct', toggle_diagnostics, { noremap = true, silent = true, desc = "Toggle diagnostics" })
     end,

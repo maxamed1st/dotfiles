@@ -13,7 +13,6 @@ M.onAttach = function(_, bufnr)
     { key = '<leader>fm', cmd = 'vim.lsp.buf.rename()', desc = 'Rename' },
     { key = 'gr', cmd = 'vim.lsp.buf.references()', desc = 'Find references' },
     { key = '<leader>ca', cmd = 'vim.lsp.buf.code_action()', desc = 'Code action' },
-    { key = '<leader>cD', cmd = 'vim.lsp.diagnostic.show_line_diagnostics()', desc = 'Show line diagnostics' },
     { key = '[d', cmd = 'vim.lsp.diagnostic.goto_prev()', desc = 'Go to previous diagnostic' },
     { key = ']d', cmd = 'vim.lsp.diagnostic.goto_next()', desc = 'Go to next diagnostic' },
     { key = '<leader>q', cmd = 'vim.lsp.diagnostic.set_loclist()', desc = 'Set location list' }
