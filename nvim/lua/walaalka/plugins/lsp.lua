@@ -27,8 +27,19 @@ return {
         vim.diagnostic.open_float(nil, opts)
       end
 
+      -- Function to toggle diagnostics
+      local function toggle_diagnostics()
+        if vim.diagnostic.is_enabled() then
+          vim.diagnostic.enable(false)
+        else
+          vim.diagnostic.enable()
+        end
+      end
+
       -- Map the function to a key, e.g., <leader>d
       vim.api.nvim_set_keymap('n', '<leader>cd', '<cmd>lua Show_line_diagnostics()<CR>', { noremap = true, silent = true })
+      -- toggle diagnostic
+        vim.keymap.set('n', '<leader>ct', toggle_diagnostics, { noremap = true, silent = true, desc = "Toggle diagnostics" })
     end,
   },
 
