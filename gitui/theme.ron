@@ -1,6 +1,0 @@
-(
-  selection_bg: Some(DarkGray),
-  cmdbar_bg: Some(DarkGray),
-  cmdbar_extra_lines_bg: Some(DarkGray),
-  disabled_fg: Some(Gray),
-)
