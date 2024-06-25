@@ -65,6 +65,24 @@ return {
 		},
 	},
 
+  -- terminal
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = function()
+      require("toggleterm").setup({
+        on_open = function(term)
+          vim.api.nvim_buf_set_keymap(term.bufnr, 't', '<Esc>', [[<C-\><C-n>]], {noremap = true, silent = true})
+        end,
+        direction = "float",
+        float_opts = {
+          border = "curved",
+        },
+      })
+      vim.api.nvim_set_keymap('n', '<leader>ft', ':ToggleTerm<CR>', {noremap = true, silent = true})
+    end,
+  },
+
   -- notification
   {
 		"folke/noice.nvim",
