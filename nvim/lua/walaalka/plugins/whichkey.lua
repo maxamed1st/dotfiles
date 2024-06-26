@@ -41,6 +41,7 @@ return
         name = "Search",
         b = { builtin.current_buffer_fuzzy_find, "Buffer" },
         g = { builtin.live_grep, "Live Grep" },
+        t = { "<cmd>TodoTelescope<cr>", "Todo Telescope" }
       },
       g = { name = "Git" },
     }, { prefix = "<leader>" })
