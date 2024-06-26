@@ -19,6 +19,7 @@ alias tf="cd ~/engineering/devmode/turjum/functions/"
 alias p="cd ~/engineering/devmode/pure-binuarals/"
 alias w="cd ~/engineering/devmode/walaalka/"
 alias dot="cd ~/engineering/dotfiles/"
+alias re="cd ~/engineering/readmode/"
 
 #programs
 alias nv="nvim"
