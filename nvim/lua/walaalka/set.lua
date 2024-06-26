@@ -14,7 +14,7 @@ vim.opt.fillchars = { eob = " " }
 
 -- Enable system clipboard support
 vim.opt.clipboard:append("unnamedplus")
-vim.opt.sidescrolloff = 8
+vim.opt.scrolloff = 999
 vim.opt.signcolumn = "yes"
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
