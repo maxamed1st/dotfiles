@@ -18,6 +18,7 @@ alias t="cd ~/engineering/devmode/turjum/"
 alias tf="cd ~/engineering/devmode/turjum/functions/"
 alias p="cd ~/engineering/devmode/pure-binuarals/"
 alias w="cd ~/engineering/devmode/walaalka/"
+alias pp="cd ~/engineering/devmode/project-planning/"
 alias dot="cd ~/engineering/dotfiles/"
 alias re="cd ~/engineering/readmode/"
 
