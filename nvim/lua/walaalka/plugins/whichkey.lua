@@ -18,7 +18,6 @@ return
     wk.register({
       f = {
         name = "Files/Buffers",
-        b = { "<cmd>Telescope buffers<cr>", "Buffers" },
         d = { utils.delete_buffer, "delete buffer" },
         f = { "<cmd>Telescope find_files<cr>", "Find File" },
         n = { "<cmd>enew<cr>", "New File" },
