@@ -1,3 +1,10 @@
+#shell integrations
+source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source <(fzf --zsh)
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 #android emulator
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -38,7 +45,3 @@ alias expoc="npx expo start -c"
 alias c="clear"
 alias q="exit"
 alias s="source ~/.zshrc"
-
-#shell integrations
-source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source <(fzf --zsh)
