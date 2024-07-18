@@ -22,6 +22,7 @@ return
         f = { "<cmd>Telescope find_files<cr>", "Find File" },
         n = { "<cmd>enew<cr>", "New File" },
         r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
+        c = { "<cmd>Telescope resume<cr>", "Continue last search" },
       },
       i = {
         name = "Interface",
