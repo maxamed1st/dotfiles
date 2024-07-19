@@ -15,36 +15,26 @@ return
     local wk = require("which-key")
     local builtin = require("telescope.builtin")
     local utils = require("walaalka.utils")
-    wk.register({
-      f = {
-        name = "Files/Buffers",
-        d = { utils.delete_buffer, "delete buffer" },
-        f = { "<cmd>Telescope find_files<cr>", "Find File" },
-        n = { "<cmd>enew<cr>", "New File" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
-        c = { "<cmd>Telescope resume<cr>", "Continue last search" },
-      },
-      i = {
-        name = "Interface",
-        c = { "<cmd>Telescope colorscheme<cr>", "Color Scheme" },
-      },
-      c = {
-        name = "Code",
-        m = { "<cmd>Mason<cr>", "Mason" },
-        f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
-        D = { builtin.diagnostics, "Show all diagnostics" },
-      },
-      w = {
-        name = "Window",
-        d = { "<cmd>close<cr>", "delete window" },
-      },
-      s = {
-        name = "Search",
-        b = { builtin.current_buffer_fuzzy_find, "Buffer" },
-        g = { builtin.live_grep, "Live Grep" },
-        t = { "<cmd>TodoTelescope<cr>", "Todo Telescope" }
-      },
-      g = { name = "Git" },
-    }, { prefix = "<leader>" })
+    wk.add({
+      { "<leader>c", group = "Code" },
+      { "<leader>cD", builtin.diagnostics, desc = "Show all diagnostics" },
+      { "<leader>cf", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", desc = "Format" },
+      { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" },
+      { "<leader>f", group = "Files/Buffers" },
+      { "<leader>fc", "<cmd>Telescope resume<cr>", desc = "Continue last search" },
+      { "<leader>fd", utils.delete_buffer, desc = "delete buffer" },
+      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
+      { "<leader>fn", "<cmd>enew<cr>", desc = "New File" },
+      { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
+      { "<leader>g", group = "Git" },
+      { "<leader>i", group = "Interface" },
+      { "<leader>ic", "<cmd>Telescope colorscheme<cr>", desc = "Color Scheme" },
+      { "<leader>s", group = "Search" },
+      { "<leader>sb", builtin.current_buffer_fuzzy_find, desc = "Buffer" },
+      { "<leader>sg", builtin.live_grep, desc = "Live Grep" },
+      { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo Telescope" },
+      { "<leader>w", group = "Window" },
+      { "<leader>wd", "<cmd>close<cr>", desc = "delete window" },
+    })
   end,
 }
