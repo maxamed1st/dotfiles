@@ -24,6 +24,7 @@ return
       { "<leader>fc", "<cmd>Telescope resume<cr>", desc = "Continue last search" },
       { "<leader>fd", utils.delete_buffer, desc = "delete buffer" },
       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File" },
+      { "<leader>fm", "<cmd>Telescope man_pages<cr>", desc = "Man pages" },
       { "<leader>fn", "<cmd>enew<cr>", desc = "New File" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
       { "<leader>g", group = "Git" },
