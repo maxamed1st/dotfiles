@@ -10,10 +10,11 @@ export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=firefox
 
-#android emulator
+# PATH
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:/applications/firefox.app/contents/macos
 
 ### ShORTCUTS ###
 
@@ -30,7 +31,6 @@ alias t="cd ~/engineering/devmode/turjum/"
 alias tn="cd ~/engineering/devmode/turjum-node/"
 alias p="cd ~/engineering/devmode/pure-binuarals/"
 alias pb="cd ~/engineering/devmode/pureBinaurals/"
-alias w="cd ~/engineering/devmode/walaalka/"
 alias wd="cd ~/engineering/devmode/walaalka.dev/"
 alias pp="cd ~/engineering/devmode/project-planning/"
 alias ra="cd ~/engineering/devmode/restoreai/"
@@ -47,6 +47,7 @@ alias nrs="npm run start"
 alias nrf="npm run serve"
 alias nrd="npm run dev"
 alias expoc="npx expo start -c"
+alias sva="source venv/bin/activate"
 
 #terminal commands
 alias c="clear"
