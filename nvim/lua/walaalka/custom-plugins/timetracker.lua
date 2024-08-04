@@ -237,7 +237,7 @@ function M.task_picker(project_name, opts)
         end
         return {
           value = entry,
-          display = entry .. ": " .. M.format_time(task.duration) .. status,
+          display = entry .. " " .. M.format_time(task.duration) .. status,
           ordinal = entry,
         }
       end
