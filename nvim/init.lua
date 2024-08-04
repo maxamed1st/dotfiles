@@ -1,4 +1,5 @@
 require("walaalka.set")
 require("walaalka.mappings")
 require("walaalka.lazy-init")
+require("walaalka.custom-plugins")
 vim.cmd.colorscheme("tokyonight")
