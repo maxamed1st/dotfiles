@@ -141,29 +141,6 @@ function M.stop_task()
   end
 end
 
-function M.list_tasks(project_name)
-  if not M.projects[project_name] then
-    print("Project does not exist: " .. project_name)
-    return
-  end
-
-  print("Tasks in project: " .. project_name)
-  for task_name, task in pairs(M.projects[project_name].tasks) do
-    print(task_name .. ": " .. M.format_time(task.duration))
-  end
-end
-
-function M.list_projects()
-  print("Projects:")
-  for project_name, _ in pairs(M.projects) do
-    if project_name == M.current_project then
-      print(project_name .. " (current)")
-    else
-      print(project_name)
-    end
-  end
-end
-
 function M.format_time(seconds)
   local hours = math.floor(seconds / 3600)
   local minutes = math.floor((seconds % 3600) / 60)
