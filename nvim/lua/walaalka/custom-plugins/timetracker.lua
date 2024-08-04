@@ -160,6 +160,21 @@ function M.edit_task(project_name, old_task_name)
   end
 end
 
+function M.edit_task_duration(project_name, task_name)
+  if not M.projects[project_name] or not M.projects[project_name].tasks[task_name] then
+    print("Task or project does not exist")
+    return
+  end
+  local new_duration = tonumber(vim.fn.input("New duration (in seconds): ", M.projects[project_name].tasks[task_name].duration))
+  if new_duration and new_duration >= 0 then
+    M.projects[project_name].tasks[task_name].duration = new_duration
+    M.save_data()
+    print("Task duration updated to " .. M.format_time(new_duration) .. " in project: " .. project_name)
+  else
+    print("Invalid duration")
+  end
+end
+
 function M.format_time(seconds)
   local hours = math.floor(seconds / 3600)
   local minutes = math.floor((seconds % 3600) / 60)
@@ -289,6 +304,15 @@ function M.task_picker(project_name, opts)
         end
       end
 
+      local function edit_task_duration()
+        local selection = action_state.get_selected_entry()
+        if selection then
+          M.edit_task_duration(project_name, selection.value)
+          actions.close(prompt_bufnr)
+          M.task_picker(project_name, opts)
+        end
+      end
+
       -- Map both insert and normal mode
       map('i', '<C-n>', create_new_task)
       map('n', '<C-n>', create_new_task)
@@ -300,6 +324,8 @@ function M.task_picker(project_name, opts)
       map('n', '<C-b>', go_back_to_projects)
       map('i', '<C-e>', edit_task)
       map('n', '<C-e>', edit_task)
+      map('i', '<C-f>', edit_task_duration)
+      map('n', '<C-f>', edit_task_duration)
 
       return true
     end,
