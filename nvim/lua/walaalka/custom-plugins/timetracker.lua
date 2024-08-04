@@ -9,11 +9,12 @@ M.projects = {}
 M.current_project = nil
 M.current_task = nil
 M.data_file = vim.fn.stdpath('data') .. '/time_tracker.csv'
+
 function M.load_data()
   local file = io.open(M.data_file, 'r')
   if file then
     for line in file:lines() do
-      local project, task, duration = line:match("([^,]+),([^,]+),(%d+)")
+      local project, task, duration = line:match("([^,]+)::([^,]+)::(%d+)")
       if project and task and duration then
         if not M.projects[project] then
           M.projects[project] = { tasks = {} }
@@ -33,7 +34,7 @@ function M.save_data()
   if file then
     for project_name, project in pairs(M.projects) do
       for task_name, task in pairs(project.tasks) do
-        file:write(string.format("%s,%s,%d\n", project_name, task_name, task.duration))
+        file:write(string.format("%s::%s::%d\n", project_name, task_name, task.duration))
       end
     end
     file:close()
