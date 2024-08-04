@@ -141,6 +141,25 @@ function M.stop_task()
   end
 end
 
+function M.edit_task(project_name, old_task_name)
+  if not M.projects[project_name] or not M.projects[project_name].tasks[old_task_name] then
+    print("Task or project does not exist")
+    return
+  end
+
+  local new_task_name = vim.fn.input("New task name: ", old_task_name) -- Prompt for new name, default to old name
+  if new_task_name ~= "" and new_task_name ~= old_task_name then
+    M.projects[project_name].tasks[new_task_name] = M.projects[project_name].tasks[old_task_name] -- Copy the task data to the new task name
+    M.projects[project_name].tasks[old_task_name] = nil -- Remove the old task
+    M.save_data() -- Save changes to the CSV file
+    print("Task renamed from '" .. old_task_name .. "' to '" .. new_task_name .. "' in project: " .. project_name)
+  elseif new_task_name == "" then
+    print("Task name cannot be empty")
+  else
+    print("No changes made to the task name")
+  end
+end
+
 function M.format_time(seconds)
   local hours = math.floor(seconds / 3600)
   local minutes = math.floor((seconds % 3600) / 60)
@@ -261,6 +280,15 @@ function M.task_picker(project_name, opts)
         M.project_picker(opts)
       end
 
+      local edit_task = function()
+        local selection = action_state.get_selected_entry()
+        if selection then
+          M.edit_task(project_name, selection.value)
+          actions.close(prompt_bufnr)
+          M.task_picker(project_name, opts)
+        end
+      end
+
       -- Map both insert and normal mode
       map('i', '<C-n>', create_new_task)
       map('n', '<C-n>', create_new_task)
@@ -270,6 +298,8 @@ function M.task_picker(project_name, opts)
       map('n', '<CR>', start_stop_task)
       map('i', '<C-b>', go_back_to_projects)
       map('n', '<C-b>', go_back_to_projects)
+      map('i', '<C-e>', edit_task)
+      map('n', '<C-e>', edit_task)
 
       return true
     end,
