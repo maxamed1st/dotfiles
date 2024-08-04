@@ -141,7 +141,7 @@ function M.stop_task()
   end
 end
 
-function M.edit_task(project_name, old_task_name)
+function M.edit_task_name(project_name, old_task_name)
   if not M.projects[project_name] or not M.projects[project_name].tasks[old_task_name] then
     print("Task or project does not exist")
     return
@@ -295,10 +295,10 @@ function M.task_picker(project_name, opts)
         M.project_picker(opts)
       end
 
-      local edit_task = function()
+      local edit_task_name = function()
         local selection = action_state.get_selected_entry()
         if selection then
-          M.edit_task(project_name, selection.value)
+          M.edit_task_name(project_name, selection.value)
           actions.close(prompt_bufnr)
           M.task_picker(project_name, opts)
         end
@@ -322,8 +322,8 @@ function M.task_picker(project_name, opts)
       map('n', '<CR>', start_stop_task)
       map('i', '<C-b>', go_back_to_projects)
       map('n', '<C-b>', go_back_to_projects)
-      map('i', '<C-e>', edit_task)
-      map('n', '<C-e>', edit_task)
+      map('i', '<C-e>', edit_task_name)
+      map('n', '<C-e>', edit_task_name)
       map('i', '<C-f>', edit_task_duration)
       map('n', '<C-f>', edit_task_duration)
 
