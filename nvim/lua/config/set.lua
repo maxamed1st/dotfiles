@@ -18,10 +18,3 @@ vim.opt.scrolloff = 999
 vim.opt.signcolumn = "yes"
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
-
--- save files automatically
-vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
-	pattern = { "*" },
-	command = "silent! wall",
-	nested = true,
-})
