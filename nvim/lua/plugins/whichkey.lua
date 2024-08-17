@@ -14,7 +14,7 @@ return
   config = function()
     local wk = require("which-key")
     local builtin = require("telescope.builtin")
-    local utils = require("walaalka.utils")
+    local utils = require("utils")
     wk.add({
       { "<leader>c", group = "Code" },
       { "<leader>cD", builtin.diagnostics, desc = "Show all diagnostics" },

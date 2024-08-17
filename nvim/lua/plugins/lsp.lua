@@ -59,7 +59,7 @@ return {
     end,
   },
 
-  -- mason-lspconfig.nvim
+ -- mason-lspconfig.nvim
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
@@ -79,7 +79,7 @@ return {
           function(server)
             require("lspconfig")[server].setup({
               capabilities = capabilities,
-              on_attach = require("walaalka.utils").onAttach,
+              on_attach = require("utils").onAttach,
             })
           end,
 
@@ -88,7 +88,7 @@ return {
             local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup({
               capabilities = capabilities,
-              on_attach = require("walaalka.utils").onAttach,
+              on_attach = require("utils").onAttach,
               settings = {
                 Lua = {
                   diagnostics = {
