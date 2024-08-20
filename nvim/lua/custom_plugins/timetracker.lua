@@ -150,9 +150,10 @@ function M.edit_task_name(project_name, old_task_name)
 
   local new_task_name = vim.fn.input("New task name: ", old_task_name) -- Prompt for new name, default to old name
   if new_task_name ~= "" and new_task_name ~= old_task_name then
-    M.projects[project_name].tasks[new_task_name] = M.projects[project_name].tasks[old_task_name] -- Copy the task data to the new task name
+    M.projects[project_name].tasks[new_task_name] = M.projects[project_name].tasks
+        [old_task_name]                                 -- Copy the task data to the new task name
     M.projects[project_name].tasks[old_task_name] = nil -- Remove the old task
-    M.save_data() -- Save changes to the CSV file
+    M.save_data()                                       -- Save changes to the CSV file
     print("Task renamed from '" .. old_task_name .. "' to '" .. new_task_name .. "' in project: " .. project_name)
   elseif new_task_name == "" then
     print("Task name cannot be empty")
@@ -166,7 +167,8 @@ function M.edit_task_duration(project_name, task_name)
     print("Task or project does not exist")
     return
   end
-  local new_duration = tonumber(vim.fn.input("New duration (in seconds): ", M.projects[project_name].tasks[task_name].duration))
+  local new_duration = tonumber(vim.fn.input("New duration (in seconds): ",
+    M.projects[project_name].tasks[task_name].duration))
   if new_duration and new_duration >= 0 then
     M.projects[project_name].tasks[task_name].duration = new_duration
     M.save_data()
@@ -333,14 +335,22 @@ function M.task_picker(project_name, opts)
   }):find()
 end
 
--- Load data when the plugin is loaded
-M.load_data()
+function M.setup(opts)
+  opts = opts or { cmd="TimeTracker", mapkey = "t" }
+  -- Load data when the plugin is loaded
+  M.load_data()
+  print("TimeTracker loaded")
 
--- Create a single user command to open the GUI
-vim.api.nvim_create_user_command("TimeTracker", function()
-  M.project_picker()
-end, {})
+  -- Create a user command to open the GUI
+  vim.api.nvim_create_user_command(opts.cmd, function()
+    M.project_picker()
+  end, {})
 
-vim.api.nvim_set_keymap("n", "<leader>t", ":TimeTracker<CR>", { desc = "Time Tracker", noremap = true, silent = true })
+  -- optionally setup keymap
+  if opts.mapkey then
+    vim.api.nvim_set_keymap("n", "<leader>" .. opts.mapkey, ":" .. opts.cmd .. "<CR>",
+      { desc = "Time Tracker", noremap = true, silent = true })
+  end
+end
 
 return M
