@@ -1,10 +1,10 @@
 return {
   -- navigation
   {
-    vim.api.nvim_set_keymap("n", "<leader>wh", "<C-w>h", { desc = "Move to left window" }),
-    vim.api.nvim_set_keymap("n", "<leader>wj", "<C-w>j", { desc = "Move to bottom window" }),
-    vim.api.nvim_set_keymap("n", "<leader>wk", "<C-w>k", { desc = "Move to top window" }),
-    vim.api.nvim_set_keymap("n", "<leader>wl", "<C-w>l", { desc = "Move to right window" }),
+    vim.api.nvim_set_keymap("n", "<Left>", "<C-w>h", { desc = "Move to left window" }),
+    vim.api.nvim_set_keymap("n", "<Down>", "<C-w>j", { desc = "Move to bottom window" }),
+    vim.api.nvim_set_keymap("n", "<Up>", "<C-w>k", { desc = "Move to top window" }),
+    vim.api.nvim_set_keymap("n", "<Right>", "<C-w>l", { desc = "Move to right window" }),
   },
 
   -- colorscheme
