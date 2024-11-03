@@ -72,7 +72,6 @@ return {
 
       require("cmp_nvim_lsp").default_capabilities()
       require("mason-lspconfig").setup({
-        ensure_installed = { "bashls", "lua_ls", "tsserver", "html", "cssls", "tailwindcss" },
         automatic_installation = true,
         handlers = {
           -- default handlers
