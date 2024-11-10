@@ -16,6 +16,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:/applications/firefox.app/contents/macos
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 ### ShORTCUTS ###
 
@@ -28,15 +29,9 @@ alias v="cd ~/.config/nvim/"
 #project files
 alias eng="cd ~/engineering"
 alias dev="cd ~/engineering/devmode/"
-alias t="cd ~/engineering/devmode/turjum/"
-alias tn="cd ~/engineering/devmode/turjum-node/"
-alias p="cd ~/engineering/devmode/pure-binuarals/"
-alias pb="cd ~/engineering/devmode/pureBinaurals/"
-alias wd="cd ~/engineering/devmode/walaalka.dev/"
-alias pp="cd ~/engineering/devmode/project-planning/"
-alias ra="cd ~/engineering/devmode/restoreai/"
 alias dot="cd ~/engineering/dotfiles/"
 alias re="cd ~/engineering/readmode/"
+alias pp="cd ~/engineering/devmode/project-planning/"
 
 #programs
 alias nv="nvim"
