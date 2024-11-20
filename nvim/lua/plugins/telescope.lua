@@ -32,6 +32,6 @@ return {
 		end
 
 		-- Keybinding to invoke buffers picker
-		vim.keymap.set("n", "<leader>fb", custom_buffers_picker, { desc = "Buffers" })
+		vim.keymap.set("n", "<leader>b", custom_buffers_picker, { desc = "Buffers" })
 	end,
 }
