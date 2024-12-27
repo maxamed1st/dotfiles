@@ -37,6 +37,7 @@ alias pp="cd ~/engineering/devmode/project-planning/"
 alias nv="nvim"
 alias ngh="ngrok http 3000"
 alias gs="git status"
+alias tw="timew"
 
 #scripts
 alias nrs="npm run start"
@@ -49,3 +50,5 @@ alias sva="source venv/bin/activate"
 alias c="clear"
 alias q="exit"
 alias s="source ~/.zshrc"
+
+. "$HOME/.local/bin/env"
