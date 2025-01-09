@@ -38,6 +38,10 @@ alias nv="nvim"
 alias ngh="ngrok http 3000"
 alias gs="git status"
 alias tw="timew"
+alias up="docker compose up"
+alias down="docker compose down"
+alias compose="docker compose down; docker compose up -d"
+alias logs="docker compose logs"
 
 #scripts
 alias nrs="npm run start"
