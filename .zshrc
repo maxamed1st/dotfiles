@@ -35,7 +35,6 @@ alias eng="cd ~/engineering"
 alias dev="cd ~/engineering/devmode/"
 alias dot="cd ~/engineering/dotfiles/"
 alias re="cd ~/engineering/readmode/"
-alias pp="cd ~/engineering/devmode/project-planning/"
 
 #programs
 alias nv="nvim"
