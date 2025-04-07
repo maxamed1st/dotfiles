@@ -13,10 +13,13 @@ export BROWSER=firefox
 # PATH
 export PATH=$PATH:~/engineering/bin
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_NDK_HOME=$HOME/Library/Android/sdk/ndk/26.1.10909125
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$ANDROID_HOME/platforms:$PATH
+
 export PATH=$PATH:/applications/firefox.app/contents/macos
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH=$PATH:/Applications/love.app/Contents/MacOS/
 
 ### ShORTCUTS ###
 
