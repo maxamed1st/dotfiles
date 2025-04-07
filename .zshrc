@@ -6,6 +6,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 #defaults
+export TERM="xterm-256color"
 export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=firefox
